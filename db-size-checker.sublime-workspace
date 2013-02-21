@@ -1,0 +1,465 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"is_from",
+				"is_from_google"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"assert",
+				"assertTrue"
+			],
+			[
+				"db",
+				"dbsize"
+			],
+			[
+				"requi",
+				"require_once"
+			],
+			[
+				"_",
+				"_MAIN"
+			],
+			[
+				"blog",
+				"blog_id"
+			],
+			[
+				"M",
+				"_MASTER"
+			],
+			[
+				"I",
+				"_IGNORE"
+			],
+			[
+				"_M",
+				"_MASTER"
+			],
+			[
+				"back",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"lint",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"linter",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"tid",
+				"Tidy PHP"
+			],
+			[
+				"ti",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"t",
+				"Tidy PHP"
+			],
+			[
+				"color",
+				"Color picker"
+			],
+			[
+				"col",
+				"Color picker"
+			]
+		],
+		"width": 539.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/db-size-checker/tests/LoginTest.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-config.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/hello-reader/tests/phpunit.xml",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/hello-reader/tests/test_texturize.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/hello-reader/tests/test_test.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/hello-reader/tests/unittests-config.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/hello-reader/tests/all.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/hello-reader/tests/bootstrap.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/hello-reader/tests/unittests-config-sample.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/hello-reader/plugin.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/vendor/nginx/conf/nginx.conf",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/vendor/nginx/conf/wordpress.conf.erb",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/db-size/db_size.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/woocommerce-gateway-paymill/includes/class-paymill-gateway.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/themes/Nova-child/page-testimonials.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/themes/Nova-child/page-template-portfolio.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/woocommerce-gateway-paymill/gateway-paymill.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/woocommerce-checkout-fields/woocommerce-checkout-fields.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/themes/Nova-child/style.css",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/redcoruna trainyourears.com/wp-content/themes/Nova-child/header.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/debugger/loader.js",
+		"/Users/luisherranz/Dropbox/TrainYourEars/debugger/logs.txt",
+		"/Users/luisherranz/Dropbox/TrainYourEars/debugger/debugger.maxpat",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/plugins/wp-e-commerce-sliding-cart-cache-control/AJAX.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/themes/Nova-child/header.php",
+		"/Volumes/Tweetbot for Mac 1.0/cnc && well89.nfo",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/themes/Nova-child/functions.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/.htaccess",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/db-backup/heroku_c3bab084ff12eef-dev.sql",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/vendor/nginx/conf/htpasswd-repair-db",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/themes/Nova/changelog.txt",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/themes/Nova/page-template-portfolio.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/db-backup/wcbqahui_tye-dev.sql",
+		"/Users/luisherranz/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/.gitignore",
+		"/Users/luisherranz/Library/Application Support/Sublime Text 2/Packages/PhpTidy/PhpTidy.sublime-settings",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/repair-db/index.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/db-backup/heroku_c3bab084ff12eef.sql",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/repair-db/.htaccess",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/.slugignore",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/dbs/wcbqahui_tye.sql",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/searchreplacedb2.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/searchreplacedb.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/dbs/trainyourears-heroku.sql",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/dbs/wcbqahui_tye-heroku.sql",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/dbs/wcbqahui_tye-dev.sql",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/config/public/wp-content/themes/Nova-child/FreshBooks/init_freshbooks.php",
+		"/Users/luisherranz/Dropbox/TrainYourEars/Web/trainyourears.com/dbs/heroku_60e9d877bfca6e9-dev.sql",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/setup/wp-config-local.php",
+		"/Users/luisherranz/Dropbox/Wordpress/AEM62/upload/docs/pipe_setup.txt",
+		"/Users/luisherranz/Dropbox/Wordpress/AEM62/upload/docs/api-examples/singlesignon_sameserver.php",
+		"/Users/luisherranz/Dropbox/Wordpress/AEM62/upload/docs/api-examples/singlesignon.php",
+		"/Users/luisherranz/Dropbox/Wordpress/magicaffiliate/magicaffiliate/core/libs/functions/mga_misc_functions.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/setup/apc.conf.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/.gitignore",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/setup/wp-config.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/setup/wp-config-backup.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/setup/wp-content/object-cache-2.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/setup/wp-content/plugins/disable-plugins-when-doing-local-dev.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/setup/.htaccess",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/DB's/heroku_68b974e3db8d69a_2013-01-31-dev.sql",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/setup/wp-content/object-cache.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/woocommerce/templates/checkout/form-billing.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/themes/appply-child/style.css",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-cron.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/tantan-s3-cloudfront/wordpress-s3/config.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/mu-global-options-plugin/mu-global-options-plugin.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/logs.log",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-config.php",
+		"/Users/luisherranz/Dropbox/FanLooper/DB's/fanlooper-dev_2013-01-28-www.sql",
+		"/Users/luisherranz/Dropbox/FanLooper/DB's/heroku_68b974e3db8d69a_2013-01-28-dev.sql",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/.htaccess",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/free-plan-custom-post-types/free-plan-custom-post-types.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/add-new-band-member/add-new-band-member.php",
+		"/Users/luisherranz/.gitignore_global",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-config-sample.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/.git/info/exclude",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/adminimize/inc-options/admin_bar.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/adminimize/adminimize_page.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/adminimize/adminimize.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/admin-header/admin-header.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/admin-footer/admin-footer.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/Admin Footer/admin-footer.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/pro-sites/pro-sites.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/themes/appply-child/footer.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/login-multisite-redirect/login-multisite-redirect.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/et-shortcodes/shortcodes.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/themes/appply-child/header.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/plugins/et-shortcodes/css/shortcodes.css",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/themes/appply/style.css",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/themes/appply/includes/featured-slider.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/themes/appply/footer.php",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/themes/appply/functions.php",
+		"/Users/luisherranz/Downloads/wcbqahui_fl.sql",
+		"/Users/luisherranz/Dropbox/FanLooper/Repositories/fanlooper.com/wp-content/README",
+		"/private/etc/hosts",
+		"/Applications/wordpress-3.5-0/apps/wordpress/htdocs/wp-config.php",
+		"/Users/luisherranz/Dropbox/Corona SDK/PhysicsEditor-CoronaSDK/main.lua",
+		"/Users/luisherranz/Downloads/Video-Gallery-master/source/config.lua",
+		"/Users/luisherranz/Downloads/Video-Gallery-master/source/main.lua"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"function",
+			"testDisplayGoogleWelcome",
+			"testIsComingFromGoogleInternational",
+			"testDisplayGoogleWelcome",
+			".+?",
+			"    function",
+			"fastcgi_cache_key",
+			"try",
+			"credit card",
+			"wp_wpsc_purchase_logs",
+			"tye-pro.herokuapp.com",
+			"www.trainyourears.com",
+			"jquery",
+			"query",
+			"blog_cats",
+			"gallery_cats",
+			"blog_cats",
+			"www.trainyourears.dev",
+			"tye-pro.herokuapp.com",
+			"wcbqahui",
+			"www.trainyourears.dev",
+			"www.trainyourears.com",
+			"www.trainyourears.dev",
+			"/home/wcbqahui/public_html/trainyourears.com/",
+			"wcbqahui",
+			"mailchimp",
+			"wcbqahui",
+			"www.trainyourears.com",
+			"trainyourears.herokuapp.com",
+			"fanlooper.com",
+			".fanlooper.com",
+			"fanlooper.com",
+			"comment_email",
+			"in_array",
+			"$_IGNORE",
+			"http://fanlooper.dev",
+			"http://fanlooper.com",
+			"fanlooper.com",
+			"http://www.fanlooper.com",
+			"http://fanlooper.com",
+			"fanlooper.com",
+			"fanlooper.dev",
+			"fanlooper.com",
+			"blog_id",
+			"if ( is_multisite()",
+			"_mw_adminimize_get_option_value",
+			"option",
+			"set_option",
+			"set_global_option",
+			"1",
+			"blog",
+			"(1)",
+			"||($blog_id==$_MAIN)",
+			"= 1",
+			"=1",
+			"1",
+			"Sorry, but it appears you are not an administrator for any sites.",
+			"role",
+			"box",
+			"('box",
+			"(box",
+			"jQuery",
+			"jquery",
+			"pricing",
+			"icon",
+			"window",
+			"fanlooper.com",
+			"fanlooper.",
+			"fanlooper.dev",
+			"fanlooper.com",
+			"127"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"a",
+			"www.trainyourears.dev",
+			"tye-pro.herokuapp.com",
+			"trainyourears.herokuapp.com",
+			"/app/config/public/",
+			"www.trainyourears.dev",
+			".fanlooper.dev",
+			"fanlooper.dev",
+			"http://www.fanlooper.dev",
+			"fanlooper.dev",
+			"http://www.fanlooper.dev",
+			"fanlooper.dev"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"paymill",
+				"config/public/wp-content/plugins/woocommerce-gateway-paymill/includes/class-paymill-gateway.php"
+			],
+			[
+				"testim",
+				"config/public/wp-content/themes/Nova-child/page-testimonials.php"
+			],
+			[
+				"portfoli",
+				"config/public/wp-content/themes/Nova-child/page-template-portfolio.php"
+			],
+			[
+				"style",
+				"config/public/wp-content/themes/Nova-child/style.css"
+			],
+			[
+				"head",
+				"redcoruna trainyourears.com/wp-content/themes/Nova-child/header.php"
+			],
+			[
+				"sear",
+				"trainyourears.com/config/public/searchreplacedb.php"
+			],
+			[
+				"wp-config",
+				"trainyourears.com/config/public/wp-config.php"
+			],
+			[
+				"wp-con",
+				"trainyourears.com/config/public/wp-config.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 293.0,
+	"status_bar_visible": true
+}

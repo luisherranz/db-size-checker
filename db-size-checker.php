@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: Testing_Plugin
+Plugin Name: DB_Size_Checker
 Plugin URI: 
 Description: A simple plugin used to help demonstrate unit testing in the context of WordPress.
 Version: 1.0
@@ -24,9 +24,9 @@ License:
 
   
 // Only create an instance of the plugin if it doesn't already exists in GLOBALS
-if( ! array_key_exists( 'testing-plugin', $GLOBALS ) ) { 
+if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) { 
 
-	class Testing_Plugin {
+	class DB_Size_Checker {
 		 
 		function __construct() {
 			
@@ -35,7 +35,7 @@ if( ! array_key_exists( 'testing-plugin', $GLOBALS ) ) {
 	} // end class
 	
 	// Store a reference to the plugin in GLOBALS so that our unit tests can access it
-	$GLOBALS['testing-plugin'] = new Testing_Plugin();
+	$GLOBALS['db-size-checker'] = new DB_Size_Checker();
 	
 } // end if
 
