@@ -45,7 +45,6 @@ class Testing_Plugin_Tests extends WP_UnitTestCase {
     {
     	// Fails if the database size is 0.
     	$this->assertGreaterThan(0, $this->plugin->check_database_size(), 'The database is zero. It shouldn\'t' );
-    	
     }
 
     public function test_db_bigger_than_threshold()
@@ -74,14 +73,6 @@ class Testing_Plugin_Tests extends WP_UnitTestCase {
     	$this->assertContainsOnly('integer', array(wp_next_scheduled( 'test_cron' )), true, 'The job is not in the cron.');
     }
 
-    public function test_deactivation_hook()
-    {
-    	// test if after activation the hook exists and if after deactivation it doesn't
-    	$this->assertContainsOnly('integer', array(wp_next_scheduled( 'db-size-checker' )), true, 'It wasn\'t activated properly');
-    	$this->plugin->deactivation();
-    	$this->assertFalse(wp_next_scheduled( 'db-size-checker' ), 'It wasn\'t deactivated properly');
-    }
-
     public function test_activation_hook()
     {
     	// test if activation registers the hook
@@ -89,6 +80,24 @@ class Testing_Plugin_Tests extends WP_UnitTestCase {
     	$this->assertFalse(wp_next_scheduled( 'db-size-checker' ), 'It wasn\'t deactivated properly');
     	$this->plugin->activation();
     	$this->assertContainsOnly('integer', array(wp_next_scheduled( 'db-size-checker' )), true, 'It wasn\'t activated properly');
+    }
+
+    public function test_activation_added_options()
+    {
+    	// test if in activation the options get added
+    	$this->plugin->activation();
+    	foreach ($this->plugin->list_of_options() as $key => $value) {
+    		$this->assertContainsOnly('string', array(get_option( $value )), true, 'It did not find the option ' . $value );
+    		$this->assertFalse((get_option( $value ) == ''),'The option ' . $value . ' is empty');
+    	}
+    }
+
+    public function test_deactivation_hook()
+    {
+    	// test if after activation the hook exists and if after deactivation it doesn't
+    	$this->assertContainsOnly('integer', array(wp_next_scheduled( 'db-size-checker' )), true, 'It wasn\'t activated properly');
+    	$this->plugin->deactivation();
+    	$this->assertFalse(wp_next_scheduled( 'db-size-checker' ), 'It wasn\'t deactivated properly');
     }
 
     public function test_do_cron_job_bad_db_size()
@@ -101,13 +110,13 @@ class Testing_Plugin_Tests extends WP_UnitTestCase {
     public function test_do_cron_job_bigger_db()
     {
     	// test if the db is bigger than the threshold
-    	$this->assertContains($this->plugin->webpage . " DB is getting big: CHECK IT NOW!", $return_array = $this->plugin->do_cron_job(1000, 500), 'The db is bigger than the threshold but it\'s not sending the correct email. It is returning: ' . implode(",", $return_array));
+    	$this->assertContains(get_option( 'dsc_blog_name', get_option( 'blogname' ) ) . " DB is getting big: CHECK IT NOW!", $return_array = $this->plugin->do_cron_job(1000, 500), 'The db is bigger than the threshold but it\'s not sending the correct email. It is returning: ' . implode(",", $return_array));
     }
 
     public function test_do_cron_job_smaller_db()
     {
     	// test if the db is bigger than the threshold
-    	$this->assertContains($this->plugin->webpage . ' DB is fine', $this->plugin->do_cron_job(500, 1000), 'The db is smaller than the threshold but it\'s not sending the correct email');
+    	$this->assertContains(get_option( 'dsc_blog_name', get_option( 'blogname' ) ) . ' DB is fine', $this->plugin->do_cron_job(500, 1000), 'The db is smaller than the threshold but it\'s not sending the correct email');
     }
 
 
