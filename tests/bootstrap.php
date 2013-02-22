@@ -2,7 +2,6 @@
 /**
  * Installs WordPress for running the tests and loads WordPress and the test libraries
  */
-//echo "loading bootstrap.php\n";
 error_reporting( E_ALL & ~E_DEPRECATED & ~E_STRICT );
 
 require_once 'PHPUnit/Autoload.php';
@@ -28,16 +27,13 @@ $_SERVER['SERVER_PROTOCOL'] = 'HTTP/1.1';
 $_SERVER['HTTP_HOST'] = WP_TESTS_DOMAIN;
 $PHP_SELF = $GLOBALS['PHP_SELF'] = $_SERVER['PHP_SELF'] = '/index.php';
 
-//echo "about to run installer\n";
 system( WP_PHP_BINARY . ' ' . escapeshellarg( dirname( __FILE__ ) . '/bin/install.php' ) . ' ' . escapeshellarg( $config_file_path ) );
-//echo "installed\n";
 
 require dirname( __FILE__ ) . '/lib/functions.php';
-//echo "before wp-settings and abspath is:" . ABSPATH . "\n";
+
 // Load WordPress
 require_once ABSPATH . 'wp-settings.php';
-//echo "after wp-settings\n";
+
 require dirname( __FILE__ ) . '/lib/testcase.php';
 require dirname( __FILE__ ) . '/lib/exceptions.php';
 
-//echo "bootstrap finished\n";

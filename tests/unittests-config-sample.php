@@ -26,6 +26,7 @@ define( 'WPLANG', '' );
 define( 'WP_DEBUG', true );
 define( 'WP_DEBUG_DISPLAY', true );
 
+define( 'WP_TEST_MODE', true);
 define( 'WP_TESTS_DOMAIN', 'www.testing-plugin.dev' );
 define( 'WP_TESTS_EMAIL', 'luis@herranz.com' );
 define( 'WP_TESTS_TITLE', 'Test Blog' );
