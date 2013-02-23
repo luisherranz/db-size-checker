@@ -2,9 +2,10 @@
 
 /* Path to the WordPress codebase in relation to the location of these tests. Since they are included with our plugin, we refer to a few directories above. */
 //define( 'ABSPATH', '/Users/luisherranz/Dropbox/Web Dev/testing-plugin/' );
-define( 'ABSPATH', '/app/public/' );
+define( 'ABSPATH', '/app/public' );
+echo('ABSPATH is: ' . ABSPATH);
 
-/* Local throwaway database */
+/* Local throwaway database 
 define( 'DB_NAME', 'testing-plugin-dev' );
 define( 'DB_USER', 'root' );
 define( 'DB_PASSWORD', 'root' );
@@ -13,7 +14,7 @@ define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 /**/
 
-/* Remote throwaway database 
+/* Remote throwaway database */
 define( 'DB_NAME', 'heroku_c4ff5ae9eae1ca2' );
 define( 'DB_USER', 'b89ea4e1ff4c2e' );
 define( 'DB_PASSWORD', 'd1a83947' );

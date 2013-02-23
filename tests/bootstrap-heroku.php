@@ -32,7 +32,7 @@ system( WP_PHP_BINARY . ' ' . escapeshellarg( dirname( __FILE__ ) . '/bin/instal
 require dirname( __FILE__ ) . '/lib/functions.php';
 
 // Load WordPress
-require_once '/app/public/wp-settings.php';
+require_once '/wp-settings.php';
 
 require dirname( __FILE__ ) . '/lib/testcase.php';
 require dirname( __FILE__ ) . '/lib/exceptions.php';
