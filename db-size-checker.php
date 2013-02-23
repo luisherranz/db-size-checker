@@ -65,6 +65,8 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 			if ($list == 'defaults') return $defaults; else return $options;
 		}
 
+
+
 		public function activation()
 		{
 			// start the plugin, so it adds the hook to the cron and it calls the function which checks the db
@@ -164,9 +166,9 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 
 			// if $db_size and $db_threshold is bigger than 0 do the check and send the notifications.
 			if ($this->is_database_bigger($db_size, $db_threshold)) {
-				$notification = $this->send_notification( $blog_name . ' DB is getting big: CHECK IT NOW!', 'The $db_size is: ' . $db_size . ' and $db_threshold is: ' . $db_threshold . ' so check it now to reduce it.');
+				$notification = $this->send_notification( $blog_name . ' DB is getting big: CHECK IT NOW!', 'The Database is: ' . $db_size . 'Kb and the Threshold is: ' . $db_threshold . 'Kb so check it now to reduce it.');
 			} else {
-				$notification = $this->send_notification( $blog_name . ' DB is fine', 'The $db_size is: ' . $db_size . ' and $db_threshold is: ' . $db_threshold . ' so nothing to worry about.');
+				$notification = $this->send_notification( $blog_name . ' DB is fine', 'The Database is: ' . $db_size . 'Kb and the Threshold is: ' . $db_threshold . 'Kb so nothing to worry about.');
 			}
 			if ($notification == false) {
 				// shit, something went wrong sending the emails, what should we do?
