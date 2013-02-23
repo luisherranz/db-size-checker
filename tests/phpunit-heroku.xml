@@ -1,5 +1,0 @@
-<phpunit
-	bootstrap="./bootstrap-heroku.php"
-	backupGlobals="false"
-	colors="true"
-></phpunit>
