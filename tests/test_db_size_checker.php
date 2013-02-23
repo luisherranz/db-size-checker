@@ -7,11 +7,16 @@ class Testing_Plugin_Tests extends WP_UnitTestCase {
  	private $plugin;  
 
  	function setUp() {
-
 		parent::setUp();
-		$this->plugin = $GLOBALS['db-size-checker'];			
-
+		$this->plugin = $GLOBALS['db-size-checker'];
+        $this->plugin->activation();
 	} // end setup
+
+    function tearDown()
+    {
+        $this->plugin->deactivation();
+        $this->plugin->delete_options();
+    }
 
 	public function test_plugin_initialization() 
 	{
@@ -35,6 +40,8 @@ class Testing_Plugin_Tests extends WP_UnitTestCase {
 
 	public function test_send_notification()
 	{
+        // activates the option to send
+        update_option( 'dsc_send_email', '1' );
 		// Checks if it's sending the notifications using wp_mail: message
 		$this->assertContains("This is the email message", $this->plugin->send_notification('some subject', 'This is the email message'), 'The send_notification messages is not being sent.');
 		// Checks if it's sending the notifications using wp_mail: message
@@ -65,6 +72,20 @@ class Testing_Plugin_Tests extends WP_UnitTestCase {
     	$this->assertFalse($this->plugin->is_database_bigger(500,500), 'The db is equal than the threshold but there\'s something wrong');
     }
 
+    public function test_db_real_size()
+    {
+        // test the database real value
+        $this->assertTrue($this->plugin->is_database_bigger($this->plugin->check_database_size(), 1), 'The db should be bigger than 1 but it is not.');
+        $this->assertFalse($this->plugin->is_database_bigger($this->plugin->check_database_size(), 100000000), 'The db should be smaller than 10000000 but it is not.');
+    }
+
+    public function test_is_db_values_numbers()
+    {
+        // checks if everything that should be numbers, is numbers
+        $this->assertTrue(is_float($this->plugin->check_database_size()), 'The check_database_size() is not returning an integer. It is: ' . gettype($this->plugin->check_database_size()));
+        $this->assertTrue(is_float($this->plugin->get_sanitized_option('dsc_db_threshold')), 'The option dsc_db_threshold is not sanitized properly. It is: ' . gettype($this->plugin->get_sanitized_option('dsc_db_threshold')));
+    }
+
     public function test_set_cron_hook()
     {
     	// test if something which is putted in the cron, is really in the cron
@@ -85,7 +106,6 @@ class Testing_Plugin_Tests extends WP_UnitTestCase {
     public function test_activation_added_options()
     {
     	// test if in activation the options get added
-    	$this->plugin->activation();
     	foreach ($this->plugin->list_of_options() as $key => $value) {
     		$this->assertContainsOnly('string', array(get_option( $value )), true, 'It did not find the option ' . $value );
     		$this->assertFalse((get_option( $value ) == ''),'The option ' . $value . ' is empty');
@@ -100,21 +120,35 @@ class Testing_Plugin_Tests extends WP_UnitTestCase {
     	$this->assertFalse(wp_next_scheduled( 'db-size-checker' ), 'It wasn\'t deactivated properly');
     }
 
+    public function test_delete_options()
+    {
+        // test if options get deleted after delete_options function
+        $this->plugin->delete_options();
+        foreach ($this->plugin->list_of_options() as $key => $value) {
+            $this->assertFalse(get_option( $value ), 'The option: ' . $value . ' was not deleted.');
+        }    
+    }
+
     public function test_do_cron_job_bad_db_size()
     {
+        // activates the option to send
+        update_option( 'dsc_send_email', '1' );
     	// test if the do_cron_job is receiving a good db_size
-    	$this->assertNull($this->plugin->do_cron_job(0,0), 'The database is null but the cron job is not exisiting');
     	$this->assertNotNull($this->plugin->do_cron_job(1,1), 'The database is not null but the cron job is exiting');
     }
 
     public function test_do_cron_job_bigger_db()
     {
+        // activates the option to send
+        update_option( 'dsc_send_email', '1' );
     	// test if the db is bigger than the threshold
     	$this->assertContains(get_option( 'dsc_blog_name', get_option( 'blogname' ) ) . " DB is getting big: CHECK IT NOW!", $return_array = $this->plugin->do_cron_job(1000, 500), 'The db is bigger than the threshold but it\'s not sending the correct email. It is returning: ' . implode(",", $return_array));
     }
 
     public function test_do_cron_job_smaller_db()
     {
+        // activates the option to send
+        update_option( 'dsc_send_email', '1' );
     	// test if the db is bigger than the threshold
     	$this->assertContains(get_option( 'dsc_blog_name', get_option( 'blogname' ) ) . ' DB is fine', $this->plugin->do_cron_job(500, 1000), 'The db is smaller than the threshold but it\'s not sending the correct email');
     }

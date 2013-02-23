@@ -73,7 +73,7 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 			// adds all the options
 			$defaults = $this->list_of_options('defaults');
 			foreach ($this->list_of_options() as $key => $value) {
-				add_option( $value, $defaults[$key]);
+				if (get_option( $value ) == false) add_option( $value, $defaults[$key]);
 			}
 		}
 
@@ -83,12 +83,45 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 			wp_clear_scheduled_hook('db-size-checker');
 		}
 
+		public function delete_options()
+		{
+			// Delete the options. Useful for the tests
+			foreach ($this->list_of_options() as $key => $value) {
+				delete_option( $value );
+			}
+		}
+
+		public function get_sanitized_option($option)
+		{
+			// get the normal option
+			$value = get_option( $option );
+			// sanitize the values
+			switch ($option) {
+				case 'dsc_db_threshold':
+					$value = floatval($value);
+					break;
+				
+				default:
+					// nothign here yet, because $value is $value
+					break;
+			}
+			// return the value
+			return $value;
+		}
+
+
 		public function send_notification($subject='Notification from DB Size Checker',$message='')
 		{
-			if ( ($this->not_in_test_mode()) && (get_option( 'dsc_send_email' ) == 1) ) {
-				return wp_mail( $this->to_email, $subject, $message, $headers = '' );
-			} else {
-				return array(get_option( 'dsc_email_to' ), $subject, $message);
+			// get the values for BOTH cases (test and no test)
+			$email = get_option( 'dsc_email_to' );
+			// if user has activated the feature
+			if (get_option( 'dsc_send_email' ) == 1) {
+				// if it's not in test mode
+				if ( $this->not_in_test_mode() ) {
+					return wp_mail($email, $subject, $message, $headers = '' );
+				} else { // if it's in test mode
+					return array($email, $subject, $message);
+				}
 			}
 		}
 
@@ -101,9 +134,8 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 				{
 					$db_size += $row['Data_length'] + $row['Index_length']; 
 				}
-
-			$db_size = $db_size;	
 			// returns the db size 
+			$db_size = floor($db_size / 1024);
 			return $db_size;
 		}
 
@@ -124,28 +156,24 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 		public function do_cron_job($db_size, $db_threshold)
 		{
 			// this function executes the cron job and sends notification if db size is bigger than threshold.
-			
+			$blog_name = $this->get_sanitized_option('dsc_blog_name');
+
 			// if no args are passed, it takes values from internal data
 			if (!isset($db_size)) $db_size = $this->check_database_size();
-			if (!isset($db_threshold)) $db_threshold = get_option( 'db_threshold' );
+			if (!isset($db_threshold)) $db_threshold = $this->get_sanitized_option( 'dsc_db_threshold' );
 
-			if ((($db_size == 0)) || ($db_threshold == 0)) {
-				// if it doesn't receive a propper $db_size, monitorizes and it exists.
-				$this->send_notification('Something went wrong with DB Size Checker', 'It is sending $db_size of ' . $db_size . ' and $db_threshold of ' . $db_threshold . ' to the do_cron_job function');
-				return null;
+			// if $db_size and $db_threshold is bigger than 0 do the check and send the notifications.
+			if ($this->is_database_bigger($db_size, $db_threshold)) {
+				$notification = $this->send_notification( $blog_name . ' DB is getting big: CHECK IT NOW!', 'The $db_size is: ' . $db_size . ' and $db_threshold is: ' . $db_threshold . ' so check it now to reduce it.');
 			} else {
-				// if $db_size and $db_threshold is bigger than 0 do the check and send the notifications.
-				if ($this->is_database_bigger($db_size, $db_threshold)) {
-					$notification = $this->send_notification(get_option( 'dsc_blog_name', get_option( 'blogname' ) ) . ' DB is getting big: CHECK IT NOW!', 'The $db_size is: ' . $db_size . ' and $db_threshold is: ' . $db_threshold . ' so check it now to reduce it.');
-				} else {
-					$notification = $this->send_notification(get_option( 'dsc_blog_name', get_option( 'blogname' ) ) . ' DB is fine', 'The $db_size is: ' . $db_size . ' and $db_threshold is: ' . $db_threshold . ' so nothing to worry about.');
-				}
-				if ($notification == false) {
-					// shit, something went wrong sending the emails, what should we do?
-				} else {
-					// returns either true if we are in the non-test or the array with email, subject and message if we are
-					return $notification;
-				}
+				$notification = $this->send_notification( $blog_name . ' DB is fine', 'The $db_size is: ' . $db_size . ' and $db_threshold is: ' . $db_threshold . ' so nothing to worry about.');
+			}
+			if ($notification == false) {
+				// shit, something went wrong sending the emails, what should we do?
+				wp_mail( get_option( 'dsc_email_to' ), 'Something wrong sending the emails of ' . $blog_name, 'Check the plugin configuration.');
+			} else {
+				// returns either true if we are in the non-test or the array with email, subject and message if we are
+				return $notification;
 			}
 		}
 
@@ -174,7 +202,7 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 			    'general_settings_section',		        // The name of the section to which this field belongs  
 			    array(									// The array of arguments to pass to the callback. In this case, just a description.  
 			        'dsc_send_email',
-			        'Activate this setting to start receiving emails when the database is bigger than the threshold.'  
+			        'Activate to start receiving emails when the database is bigger than the threshold.'  
 			    )  
 			);
 			// Register the settings
@@ -252,7 +280,7 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 		public function general_settings_callback()
 		{
 			// Display the info
-			echo("The actual DB size is: <strong>" . floor($this->check_database_size() / 1024) . "Kb</strong><br>");
+			echo("The actual DB size is: <strong>" . $this->check_database_size() . "Kb</strong><br>");
 		}
 
 		public function display_the_settings_page()
