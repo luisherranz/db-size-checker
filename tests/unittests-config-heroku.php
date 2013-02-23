@@ -2,7 +2,7 @@
 
 /* Path to the WordPress codebase in relation to the location of these tests. Since they are included with our plugin, we refer to a few directories above. */
 //define( 'ABSPATH', '/Users/luisherranz/Dropbox/Web Dev/testing-plugin/' );
-define( 'ABSPATH', '/app/public' );
+define( 'ABSPATH', '/app/public/' );
 
 /* Local throwaway database */
 define( 'DB_NAME', 'testing-plugin-dev' );
