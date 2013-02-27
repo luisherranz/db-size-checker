@@ -168,7 +168,8 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 			if ($this->is_database_bigger($db_size, $db_threshold)) {
 				$notification = $this->send_notification( $blog_name . ' DB is getting big: CHECK IT NOW!', 'The Database is: ' . $db_size . 'Kb and the Threshold is: ' . $db_threshold . 'Kb so check it now to reduce it.');
 			} else {
-				$notification = $this->send_notification( $blog_name . ' DB is fine', 'The Database is: ' . $db_size . 'Kb and the Threshold is: ' . $db_threshold . 'Kb so nothing to worry about.');
+				//$notification = $this->send_notification( $blog_name . ' DB is fine', 'The Database is: ' . $db_size . 'Kb and the Threshold is: ' . $db_threshold . 'Kb so nothing to worry about.');
+				$notification = array($blog_name . ' DB is fine', 'The Database is: ' . $db_size . 'Kb and the Threshold is: ' . $db_threshold . 'Kb so nothing to worry about.');
 			}
 			if ($notification == false) {
 				// shit, something went wrong sending the emails, what should we do?
