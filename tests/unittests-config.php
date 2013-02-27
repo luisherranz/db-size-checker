@@ -13,11 +13,11 @@ define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 /**/
 
-/* Remote throwaway database 
-define( 'DB_NAME', 'heroku_c4ff5ae9eae1ca2' );
-define( 'DB_USER', 'b89ea4e1ff4c2e' );
-define( 'DB_PASSWORD', 'd1a83947' );
-define( 'DB_HOST', 'us-cdbr-east-03.cleardb.com' );
+/* Remote throwaway database *
+define( 'DB_NAME', 'testing-plugin-dev' );
+define( 'DB_USER', 'testing-plugin' );
+define( 'DB_PASSWORD', 'testing-plugin' );
+define( 'DB_HOST', 'instance39953.db.xeround.com:7725' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', '' );
 /**/
