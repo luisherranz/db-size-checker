@@ -171,7 +171,7 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 				//$notification = $this->send_notification( $blog_name . ' DB is fine', 'The Database is: ' . $db_size . 'Kb and the Threshold is: ' . $db_threshold . 'Kb so nothing to worry about.');
 				$notification = array($blog_name . ' DB is fine', 'The Database is: ' . $db_size . 'Kb and the Threshold is: ' . $db_threshold . 'Kb so nothing to worry about.');
 			}
-			if ($notification == false) {
+			if ($notification === false) {
 				// shit, something went wrong sending the emails, what should we do?
 				wp_mail( get_option( 'dsc_email_to' ), 'Something wrong sending the emails of ' . $blog_name, 'Check the plugin configuration.');
 			} else {
