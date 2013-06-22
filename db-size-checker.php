@@ -155,7 +155,7 @@ if( ! array_key_exists( 'db-size-checker', $GLOBALS ) ) {
 			}
 		}
 
-		public function do_cron_job($db_size, $db_threshold)
+		public function do_cron_job()
 		{
 			// this function executes the cron job and sends notification if db size is bigger than threshold.
 			$blog_name = $this->get_sanitized_option('dsc_blog_name');
